@@ -1,0 +1,13 @@
+[Unit]
+Description=vlrggapi - Valorant esports API
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/vlrggapi
+ExecStart=/home/ubuntu/vlrggapi/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

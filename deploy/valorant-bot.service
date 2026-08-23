@@ -1,0 +1,15 @@
+[Unit]
+Description=Valorant Discord Bot
+After=network.target vlrggapi.service
+Requires=vlrggapi.service
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/discord-bot
+EnvironmentFile=/home/ubuntu/discord-bot/.env
+ExecStart=/home/ubuntu/discord-bot/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
